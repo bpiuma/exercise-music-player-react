@@ -69,67 +69,67 @@ export let Lista = function() {
 			url: "files/videogame/songs/zelda_title.mp3"
 		},
 		{
-			id: 12,
+			id: 11,
 			category: "game",
 			name: "Sonic Brain Zone",
 			url: "files/videogame/songs/sonic_brain-zone.mp3"
 		},
 		{
-			id: 13,
+			id: 11,
 			category: "game",
 			name: "Zelda Link To Past",
 			url: "files/videogame/songs/zelda_link-to-past.mp3"
 		},
 		{
-			id: 14,
+			id: 12,
 			category: "game",
 			name: "Dong KinKong Main",
 			url: "files/other/songs/dkng-main.mp3"
 		},
 		{
-			id: 15,
+			id: 13,
 			category: "game",
 			name: "Dong KinKong Other",
 			url: "files/other/songs/dkng-other.mp3"
 		},
 		{
-			id: 16,
+			id: 14,
 			category: "game",
 			name: "mega-man",
 			url: "files/other/songs/mega-man.mp3"
 		},
 		{
-			id: 17,
+			id: 15,
 			game: "cartoon",
 			name: "Flintstones",
 			url: "files/cartoons/songs/flintstones.mp3"
 		},
 		{
-			id: 18,
+			id: 16,
 			game: "cartoon",
 			name: "power-rangers",
 			url: "files/cartoons/songs/power-rangers.mp3"
 		},
 		{
-			id: 19,
+			id: 17,
 			game: "cartoon",
 			name: "simpsons",
 			url: "files/cartoons/songs/simpsons.mp3"
 		},
 		{
-			id: 20,
+			id: 18,
 			game: "cartoon",
 			name: "south-park",
 			url: "files/cartoons/songs/south-park.mp3"
 		},
 		{
-			id: 21,
+			id: 19,
 			game: "cartoon",
 			name: "thundercats",
 			url: "files/cartoons/songs/thundercats.mp3"
 		},
 		{
-			id: 22,
+			id: 20,
 			game: "cartoon",
 			name: "x-men",
 			url: "files/cartoons/songs/x-men.mp3"

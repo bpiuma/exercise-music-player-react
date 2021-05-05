@@ -11,8 +11,30 @@ import playCircleFill from "@iconify-icons/bi/play-circle-fill";
 import pauseOutlineFilled from "@iconify-icons/carbon/pause-outline-filled";
 
 export function Home() {
+	/********** OPCION 1: Importando la lista de lista.js **********/
+
 	//estado con la lista de canciones
-	const [songList, setSongList] = useState(Lista);
+	//const [songList, setSongList] = useState(Lista);
+
+	/********** OPCION 2: Usando Fetch *****************************/
+
+	useEffect(() => {
+		obtenerCanciones();
+	}, []);
+
+	let [songList, setSongList] = useState([]);
+
+	const obtenerCanciones = async () => {
+		try {
+			const res = await fetch(
+				"https://assets.breatheco.de/apis/sound/songs"
+			);
+			const data = await res.json();
+			setSongList(data);
+		} catch (error) {
+			console.log(error);
+		}
+	};
 
 	//estado con la id de la cancion seleccionada
 	const [cancionActual, setCancionActual] = useState(1);
@@ -26,6 +48,7 @@ export function Home() {
 	function seleccionar(id) {
 		setCancionActual(id);
 		iniciarAudio(id);
+		setBotonPlay("off");
 	}
 
 	//mueve la seleccion hacia arriba o abajo
@@ -33,13 +56,14 @@ export function Home() {
 		let id = cancionActual + direccion;
 		switch (id) {
 			case 0:
-				id = 22;
+				id = 20;
 				break;
-			case 23:
+			case 21:
 				id = 1;
 				break;
 		}
 		setCancionActual(id);
+		audio.current.src = obtenerUrl(id);
 		if (botonPlay == "off") {
 			iniciarAudio(id);
 		}
@@ -48,9 +72,14 @@ export function Home() {
 	//inicia el audio con la id proporcionada
 	function iniciarAudio(id) {
 		let result = songList.filter(song => song.id == id);
-		audio.current.src =
-			"https://assets.breatheco.de/apis/sound/" + result[0].url;
+		audio.current.src = obtenerUrl(id);
 		audio.current.play();
+	}
+
+	//obtiene el url de una cancion a partir del id
+	function obtenerUrl(id) {
+		let result = songList.filter(song => song.id == id);
+		return "https://assets.breatheco.de/apis/sound/" + result[0].url;
 	}
 
 	//inicia el audio y muesta el boton pause
