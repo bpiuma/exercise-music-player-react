@@ -36,6 +36,8 @@ export function Home() {
 		}
 	};
 
+	/****************************************************************/
+
 	//estado con la id de la cancion seleccionada
 	const [cancionActual, setCancionActual] = useState(1);
 
